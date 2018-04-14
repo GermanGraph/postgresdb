@@ -1,4 +1,4 @@
-CREATE EXTENSION hstore;
+CREATE EXTENSION IF NOT EXISTS hstore;
 
 
 CREATE TABLE public.video
@@ -8,7 +8,7 @@ CREATE TABLE public.video
     path VARCHAR(255) NOT NULL,
     youtube_url VARCHAR(255),
     duration INT NOT NULL,
-    size INT NOT NULL,
+    size POINT NOT NULL,
     fps INT NOT NULL
 );
 CREATE UNIQUE INDEX table_name_path_uindex ON public.video (path);
