@@ -27,3 +27,18 @@ CREATE TABLE public.feature
     info HSTORE DEFAULT hstore(''),
     CONSTRAINT feature_video_id_fk FOREIGN KEY (video_id) REFERENCES video (id)
 );
+
+
+CREATE TABLE public.dubbing
+(
+    id SERIAL PRIMARY KEY,
+    video_id INT NOT NULL,
+    text TEXT,
+    frames INT ARRAY NOT NULL CHECK (
+        array_length(frames, 1) = 2
+        AND frames[1] <= frames[2]
+    ),
+    info HSTORE DEFAULT hstore('') NOT NULL,
+    CONSTRAINT dubbing_video_id_fk FOREIGN KEY (video_id) REFERENCES video (id)
+);
+
