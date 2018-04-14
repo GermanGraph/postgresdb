@@ -1,0 +1,26 @@
+video
+	id
+	title
+	path
+	youtube_url
+	duration
+	size
+	fps
+
+
+feature
+	id
+	video_id
+	pos
+	image
+	frames
+	_pic
+	info
+
+
+dubbing
+	id
+	video_id
+	text
+	frames
+	info
